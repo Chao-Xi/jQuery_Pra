@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery1</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script type="text/javascript">
+	 //   $(document).ready(function() {});
+
+	 //short version
+	 $(function(){
+         $('#btn1').html('my button');
+         $('#btn1').on('click',function(){
+         	$('#panel1').slideToggle(400);
+         }) 
+
+          $('#panel1').on('click',function(){
+         	$('#panel1').toggle(400);
+         }) 
+         
+          $('#btn2').on('mouseover',function(){
+         	$('#panel2').fadeToggle(400);
+         }) 
+	 });
+
+	</script>
+	<style type="text/css">
+	    
+		div{
+			width:100px;
+			height:100px;
+			background-color: #ffeeee;
+			margin: 5px 5px;
+			position: absoulte;
+			float: left;
+		}
+	</style>
+</head>
+<body>
+   <p><button id='btn1'>#Btn1</button> <button id='btn2'>#Btn2</button> <button id='btn3'>#Btn3</button> <button id='btn4'>#Btn4</button></p>
+   <div id="panel1">This is my div1</div>
+   <div id="panel2">This is my div2</div>
+</body>
+</html>

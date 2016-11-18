@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery4</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script type="text/javascript">
+	 //   $(document).ready(function() {});
+
+	 //short version
+	 $(function(){
+        
+        //$('li').first();
+        //$('li').last();
+        //$('ul:first').children();
+        //$('li:first').siblings();
+        //$('ul:first').parent();
+        //$('li').eq(4)=>1
+        //$('li').eq(4).parent=>sublist
+        //$('li').eq(4).parent().parent()=><li></li>
+        //$('li').eq(4).parent().parent().prev()=>Three
+        //$('li').eq(4).parent().parent().prev().prev()=>Two
+
+        $('li').on('click', function(){
+          //$(this).next().hide();
+          // $(this).removeClass('speical');
+          // $(this).siblings().addClass('special');  
+
+          
+            if($(this).is('.special'))
+          // if(!$(this).is('.special')) not special
+        	{ alert('this is class special'); }
+          //next is just one element
+          //silblings is all other elements 
+        });
+
+       
+        $('.list').on('click',function(){
+        	//$(this).find('li').filter(':first').addClass('special');
+        	//$(this).find('li').filter('.special').remove();
+        	
+        });   
+           
+
+         // $('.sublist li').on('click',function(){ 
+         // 	$(this).hide(); 
+         // });   
+         
+            $('li').on('click',function(){
+            	if($(this).parent().is('.sublist'))
+            	{
+            		$(this).hide();
+            	}
+            });
+
+         $('#refresh').on('click',function(){
+        	  location.reload();
+        })
+    
+	 });
+
+	</script>
+	<style type="text/css">
+         body{
+         	background-color: #DFE2DB;
+         }
+          
+          .special{
+          	color:red;
+          } 
+	</style>
+</head>
+<body>
+   <ul class="list">
+   	   <li>One</li>
+       <li class="special">Two</li>
+       <li>Three</li>
+       <li>
+       <ul class="sublist">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+       </ul>
+       </li>
+   </ul>
+   
+   <p><button id="refresh">Refresh</p>
+</body>
+</html>

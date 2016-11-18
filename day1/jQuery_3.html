@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery1</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script type="text/javascript">
+	 //   $(document).ready(function() {});
+
+	 //short version
+	 $(function(){
+        $('.panel-div').on('click', function(event) {
+        	event.preventDefault();
+        	/* Act on the event */
+            var panelId=$(this).attr('data-panelid');
+            $('#'+panelId).toggle(200);});
+
+       $('#refresh').on('click',function(){
+       	    location.reload();
+       });
+
+    
+	 });
+
+	</script>
+	<style type="text/css">
+         body{
+         	background-color: #DFE2DB;
+         }
+
+		div{
+			width:100px;
+			height:100px;
+			background-color: #FFF056;
+			margin: 5px 5px;
+			position: relative;
+			float: left;
+		}
+	</style>
+</head>
+<body>
+   <div id="panel1" class="panel-div" data-panelid="panel1">1</div>
+   <div id="panel2" class="panel-div" data-panelid="panel2">2</div>
+   <div id="panel3" class="panel-div" data-panelid="panel3">3</div>
+   <div id="panel4" class="panel-div" data-panelid="panel4">4</div>
+   <div id="panel5" class="panel-div" data-panelid="panel5">5</div>
+   <div id="panel6" class="panel-div" data-panelid="panel6">6</div>
+
+   <p><button id="refresh">Refresh</p>
+</body>
+</html>

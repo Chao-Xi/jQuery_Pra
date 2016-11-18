@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery1</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script type="text/javascript">
+	 //   $(document).ready(function() {});
+
+	 //short version
+	 $(function(){
+
+      //$('#panel1').hide(300).show(1000).hide(300).show(1000);
+      //$('#panel2').slideUp(1000).delay(1000).slideDown(1000);
+      //$('#panel3').fadeToggle(1000).fadeToggle(1000)
+       $('#panel4').toggle(1000).toggle(1000);
+       $('#panel5').css({background:'white', 
+       	                color:'red', 
+       	                border:'1px solid black'
+       	                });
+       $('#panel6').css({opacity:'0.5'});
+	 });
+
+	</script>
+	<style type="text/css">
+		div{
+			width:100px;
+			height:100px;
+			background-color: purple;
+			margin: 5px 5px;
+			position: relative;
+			float: left;
+		}
+	</style>
+</head>
+<body>
+   <div id="panel1"></div>
+   <div id="panel2"></div>
+   <div id="panel3"></div>
+   <div id="panel4"></div>
+   <div id="panel5">lalala</div>
+   <div id="panel6"></div>
+</body>
+</html>
